@@ -20,10 +20,29 @@ class LifeCycleA extends Component {
     componentDidMount() { //executes at last
         console.log('component did mount')
     }
+
+    shouldComponentUpdate() {
+        console.log(' LifeCycleA shldcompupdate')
+        return true
+    }
+    getSnapshotBeforeUpdate(prevProps, prevState) {
+        console.log("LifeCycleA getSnapshotBeforeUpdate")
+        return null
+    }
+
+    componentDidUpdate() {
+        console.log("LifeCyleA componentDid update")
+    }
+    changeState =() => {
+        this.setState({
+            name:'codeVolution'
+        })
+    }
     render() {
       console.log('render')
     return (
         <div><div>LifeCycle A</div>
+            <button onClick={this.changeState}>Change State</button>
         <LifeCycleB/>
         </div>
     )
