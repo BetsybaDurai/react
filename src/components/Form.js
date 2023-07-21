@@ -28,18 +28,25 @@ class Form extends Component {
             topic: event.target.value
         })
     }
-  render() {
+    handleSubmit = (event) => {
+        
+        alert(`${this.state.username} ${this.state.comments} ${this.state.topic}`)
+        event.preventDefault();
+    }
+    render() {
+      
+        const { username, comments, topic } = this.state;
     return (
-        <form>
+        <form onSubmit={this.handleSubmit}>
             <div>
                 <label>UserName</label>
-                <input type='text' value={this.state.username}
+                <input type='text' value={username}
                     onChange={this.handlerUsernameChange} />
             </div>
 
             <div>
                 <label>Comments</label>
-                <textarea value={this.state.comments}
+                <textarea value={comments}
                     onChange={this.handlerCommentsChange}>
                     
                     </textarea>
@@ -47,12 +54,13 @@ class Form extends Component {
 
             <div>
                 <label>Topic</label>
-                <select value={this.state.topic} onChange={this.handleTopicChange}>
+                <select value={topic} onChange={this.handleTopicChange}>
                     <option value="React"> React</option>
                     <option value="Anguar"> Angular</option>
                     <option value="Vue"> Vue</option>
                 </select>
             </div>
+            <button type="submit">Submit</button>
      </form>
     )
   }
