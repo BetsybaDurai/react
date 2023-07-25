@@ -21,12 +21,18 @@ import FragmentDemo from './FragmentDemo';
 import Table from './components/Table';
 import ParentComp from './components/ParentComp';
 import RefsDemo from './components/RefsDemo';
+import PortalDemo from './components/PortalDemo';
+import ClickCounter from './ClickCounter';
+import HoverCounter from './HoverCounter';
 
 
 function App() {
   return (
     <div className="App">
-      <RefsDemo></RefsDemo>
+      <ClickCounter />
+      <HoverCounter/>
+      {/* <PortalDemo/> */}
+      {/* <RefsDemo></RefsDemo> */}
       {/* <ParentComp/> */}
       {/* <FragmentDemo />
       <Table/> */}
